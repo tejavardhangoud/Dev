@@ -30,3 +30,8 @@ jobs:
 
       - name: actor
         run: echo ${{ github.actor }}
+
+  buildone:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ env.a }}
