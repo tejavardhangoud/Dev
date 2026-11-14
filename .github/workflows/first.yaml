@@ -40,7 +40,7 @@ jobs:
     runs-on: 
     strategy:
       matrix:
-        os:[windows-latest]
-        node:[16]
+        os: [windows-latest]
+        node: [16]
     steps:
       - run: echo ${{ env.a }}
