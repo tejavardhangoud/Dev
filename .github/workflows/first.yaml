@@ -68,6 +68,11 @@ jobs:
           password: ${{secrets.PASSWORD}}
 
       - name: docker-push
+        env:
+          DOCKER_USERNAME: ${{ vars.USER }}
         run: |
-          docker build -t ${{vars.USER}}/${{env.IMAGE_NAME}}:latest ${{env.appDirectory }}
-          docker push ${{ vars.USER }}/${{ env.IMAGE_NAME }}:latest
+          docker_username="${DOCKER_USERNAME//$'\r'/}"
+          docker_username="${docker_username//$'\n'/}"
+          image="${docker_username}/${IMAGE_NAME}:latest"
+          docker build -t "$image" "$appDirectory"
+          docker push "$image"
