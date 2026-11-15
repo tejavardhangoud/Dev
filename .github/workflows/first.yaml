@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  Node_version: 18
+  Node_version: 21.1
   appDirectory: ./react-app
   IMAGE_NAME: react-app
 
