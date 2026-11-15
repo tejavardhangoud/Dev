@@ -38,6 +38,7 @@ jobs:
 
   docker-build:
      runs-on: ubuntu-latest
+     environment: username
 
      steps:
       - name: checkout code
