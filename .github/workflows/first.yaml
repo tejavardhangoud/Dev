@@ -69,5 +69,5 @@ jobs:
 
       - name: docker-push
         run: |
-          docker build -t ${{ vars.USER }}/${{ env.IMAGE_NAME }}:latest ${{ env.appDirectory }}
+          docker build -t ${{vars.USER}}/${{env.IMAGE_NAME}}:latest ${{env.appDirectory }}
           docker push ${{ vars.USER }}/${{ env.IMAGE_NAME }}:latest
